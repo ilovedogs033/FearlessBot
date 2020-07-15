@@ -157,7 +157,11 @@ bot.on('message', message => {
             hmCommand(message);
             break;
         case "!yesno":
-            yesnoCommand(message);
+            yesnoCommand(message, params);
+            break;
+        case "!pronoun":
+        case "!setpronoun":
+            setPronounCommand(message);
             break;
 
         // Normal user database commands
@@ -971,6 +975,32 @@ function regionCommand(message, region)
         break;
         default:
             message.reply("region not recognized. Acceptable values: northamerica, southamerica, europe, asia, africa, oceania, clear.");
+        break;
+    }
+}
+
+function setPronounCommand(message, pronoun)
+{
+    switch (pronoun) {
+        case "he":
+        case "he/him":
+            toggleRoleCommand(message, "he/him");
+        break;
+        case "she":
+        case "she/her":
+            toggleRoleCommand(message, "she/her");
+        break;
+        case "they":
+        case "they/them":
+            toggleRoleCommand(message, "they/them");
+        break;
+        case "any":
+            toggleRoleCommand(message, "any pronouns");
+        break;
+        default:
+            message.reply("unrecognized pronoun. usage: ``!pronoun <pronouns>`` \n" +
+                        "If you use multiple sets of pronouns, please add them individually.\n" + 
+                        "The bot currently accepts ``he/him``, ``she/her``, ``they/them``, and ``any``. If you use other pronouns, please let a mod know so they can be added manually.");
         break;
     }
 }
