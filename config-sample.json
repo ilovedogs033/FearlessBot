@@ -1,12 +1,12 @@
 {
-  "token": "",
+  "token": "NzY3MzY0NDUzMjg4Mzc4MzY4.X4w11g.VvnYEkLyaJfIlp_f9wCMT67ms7Y",
   "mysqlHost": "",
   "mysqlUser": "",
   "mysqlPass": "",
   "mysqlDB": "",
 
   "prefix": "!",
-  "mainServer": "",
+  "mainServer": "em fam",
   "statCountingChannels": ["", ""],
   "noCommandChannels": [""],
   "botAdminUserId": "",
